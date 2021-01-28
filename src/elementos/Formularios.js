@@ -63,7 +63,7 @@ const LeyendaError = styled.p`
 	font-size: 12px;
 	margin-bottom: 0;
 	color: ${colores.error};
-	/* display: none; */
+	display: none;
 	
 `;
 
@@ -77,7 +77,7 @@ const IconoValidacion = styled(FontAwesomeIcon)`
 	bottom: 14px;
 	z-index: 100;
 	font-size: 16px;
-	opacity: 1;
+	opacity: 0;
 	
 `;
 
@@ -125,7 +125,8 @@ const Boton = styled.button`
 
 const MensajeExito = styled.p`
 	font-size: 14px;
-	color: ${colores.exito};
+    color: ${colores.exito};
+    display: none;
 `;
 
 const MensajeError = styled.div`
@@ -134,7 +135,8 @@ const MensajeError = styled.div`
 	background: #F66060;
 	padding: 0px 15px;
 	border-radius: 3px;
-	grid-column: span 2;
+    grid-column: span 2;
+    
 	p {
 		margin: 0;
 	} 

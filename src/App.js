@@ -28,12 +28,12 @@ const App = () => {
           </Label>
         </ContenedorTerminos>
 
-        <MensajeError>
+        { false && <MensajeError>
         <p>
 						<FontAwesomeIcon icon={faExclamationTriangle}/>
 						<b>Error:</b> Por favor rellena el formulario correctamente.
 					</p>
-        </MensajeError>
+        </MensajeError>}
 
         <ContenedorBotonCentrado>
           <Boton type="submit">Enviar</Boton>
