@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -25,7 +25,9 @@ const Label = styled.label`
 	min-height: 40px;
 	cursor: pointer;
 	
-	
+	${props => props.valido === 'false' && css`
+		color: ${colores.error};
+	`}
 `;
 
 
@@ -53,6 +55,19 @@ const Input = styled.input`
 		outline: none;
 		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 	}
+
+/* n01: Coloco Css porque con una funcion tipo flecha  valido que si es cierto
+=== true, (comprobar si es verdadero) y SI ES ASI, entonces activa o usa O EJECUTAMOS codigo
+CSS (&& css), por eso tambien arriba importo CSS
+import styled, {css} from 'styled-components';
+desde Styled-components */
+	${props => props.valido === 'true' && css` /* coloco CSS por esto: n01 */
+		border: 3px solid transparent;
+	`} /* Ahora si es FALSO (false) que muestre este borde: */
+	${props => props.valido === 'false' && css`
+		border: 3px solid ${colores.error} !important;
+	`}
+
 	
 `;
 
@@ -64,6 +79,13 @@ const LeyendaError = styled.p`
 	margin-bottom: 0;
 	color: ${colores.error};
 	display: none;
+
+	${props => props.valido === 'true' && css`
+		display: none;
+	`}
+	${props => props.valido === 'false' && css`
+		display: block;
+	`}
 	
 `;
 
@@ -78,6 +100,15 @@ const IconoValidacion = styled(FontAwesomeIcon)`
 	z-index: 100;
 	font-size: 16px;
 	opacity: 0;
+
+	${props => props.valido === 'false' && css`
+		opacity: 1;
+		color: ${colores.error};
+	`}
+	${props => props.valido === 'true' && css`
+		opacity: 1;
+		color: ${colores.exito};
+	`}
 	
 `;
 

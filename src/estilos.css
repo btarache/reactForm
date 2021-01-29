@@ -15,8 +15,3 @@ main {
 	margin: auto;
 	padding: 40px;
 }
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
